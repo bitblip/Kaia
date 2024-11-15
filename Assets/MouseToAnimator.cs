@@ -24,8 +24,8 @@ public class MouseToAnimator : MonoBehaviour
         Vector3 screenPosition = Camera.main.ScreenToViewportPoint(Input.mousePosition);
         Vector2 normalizedPosition = new Vector2(screenPosition.x * 2 - 1, screenPosition.y * 2 - 1);
 
-        // Angle to 135 degrees
-        var zero = new Vector3(-0.707f, 0.707f, 0);
+        // Flip axis
+        var zero = new Vector3(-0.11f, 0.26f, 0);
         var normal = Vector3.SignedAngle(normalizedPosition, zero, Vector3.forward);
         var look = Vector3.SignedAngle(_lookVector, zero, Vector3.forward);
 
@@ -46,6 +46,7 @@ public class MouseToAnimator : MonoBehaviour
             _lookVector = Vector3.RotateTowards(_lookVector, normalizedPosition, _rotationRadianSpeed * Time.deltaTime, 0.0f);
         }
 
+        Debug.Log(normalizedPosition);
         Debug.DrawRay(transform.position, _lookVector, Color.red);
 
         // update the animator X and Y
