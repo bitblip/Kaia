@@ -24,13 +24,18 @@ public class MouseToAnimator : MonoBehaviour
         Vector3 screenPosition = Camera.main.ScreenToViewportPoint(Input.mousePosition);
         Vector2 normalizedPosition = new Vector2(screenPosition.x * 2 - 1, screenPosition.y * 2 - 1);
 
+        // Angle to 135 degrees
+        var zero = new Vector3(-0.707f, 0.707f, 0);
+        var normal = Vector3.SignedAngle(normalizedPosition, zero, Vector3.forward);
+        var look = Vector3.SignedAngle(_lookVector, zero, Vector3.forward);
+
         // Do not cross Up, we need to animation around the other way
-        if (normalizedPosition.x > 0 && _lookVector.x <= 0)
+        if (normal > 0 && look <= 0)
         {
             // Rotate counter clockwise
             _lookVector = Quaternion.Euler(0, 0, _rotationRadianSpeed * Mathf.Rad2Deg * Time.deltaTime ) * _lookVector;
         }
-        else if (normalizedPosition.x < 0 && _lookVector.x >= 0)
+        else if (normal < 0 && look >= 0)
         {
             // Rotate clockwise
             _lookVector = Quaternion.Euler(0, 0, -_rotationRadianSpeed * Mathf.Rad2Deg * Time.deltaTime) * _lookVector;
