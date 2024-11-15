@@ -139,6 +139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9c866d036076ed44854777138af5fc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _rotationRadianSpeed: 10
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -246,7 +247,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 2.1057692
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -291,8 +292,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ComponentVersion: 1
   m_AssetsPPU: 16
-  m_RefResolutionX: 320
-  m_RefResolutionY: 180
+  m_RefResolutionX: 32
+  m_RefResolutionY: 64
   m_CropFrame: 0
   m_GridSnapping: 0
   m_FilterMode: 0
@@ -405,11 +406,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: b4ce7646ab16978489093c0999a9c4a1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.934
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: b4ce7646ab16978489093c0999a9c4a1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.511
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: b4ce7646ab16978489093c0999a9c4a1, type: 3}
       propertyPath: m_LocalPosition.z
